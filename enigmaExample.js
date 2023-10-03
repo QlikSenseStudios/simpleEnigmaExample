@@ -16,8 +16,6 @@
       createSocket: () =>
         new WebSocket(url, {
           headers: { Authorization: `Bearer ${apiKey}` },
-          // you could pass the session cookie instead of the api key
-          // headers: { <QLIKCOOKIE> },
         }),
     });
   
@@ -65,7 +63,7 @@
         const sheetId = item.qInfo.qId;
         const sheet = await doc.getObject(sheetId);
         const sheetLayout = await sheet.getLayout();
-        console.log(sheetLayout);
+        console.log(sheetLayout.qLayout);
       })
 
 
